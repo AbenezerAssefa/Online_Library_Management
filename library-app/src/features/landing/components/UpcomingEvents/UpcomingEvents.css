@@ -1,0 +1,108 @@
+.upcoming-events {
+  width: 100%;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: white; /* Keeps the background white */
+}
+
+.upcoming-events:hover {
+  transform: translateY(-12px); /* Adds a more pronounced lift effect on hover */
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2), 0 6px 32px rgba(0, 0, 0, 0.15);
+}
+
+.upcoming-events-header-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 4px solid black; /* Black border */
+}
+
+.upcoming-events-header-group h2 {
+  font-size: 3rem; /* Larger and more impactful font size */
+  font-weight: 900;
+  color: black; /* Title text color is black */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background: none; /* Removed gradient */
+  display: inline-block;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  font-family: 'Montserrat', sans-serif; /* Stylish font */
+}
+
+.upcoming-events-header-group svg {
+  font-size: 3rem;
+  color: black; /* Icon color is black */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.upcoming-events-header-group svg:hover {
+  transform: rotate(360deg);
+  color: black; /* Keeps the color black even on hover */
+}
+
+h3 {
+  font-size: 2rem;
+  color: black; /* Black color for the subtitle */
+  font-family: 'Dancing Script', cursive; /* Elegant script font */
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: black; /* Black color for subheadings */
+  font-family: 'Roboto Slab', serif; /* Slab serif for a bold, artistic style */
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.upcoming-events-event {
+  margin-left: 24px;
+  margin-bottom: 18px;
+}
+
+.upcoming-events-event li p {
+  font-size: 1.2rem;
+  color: black; /* Black text color */
+  margin: 8px 0;
+  font-family: 'Lora', serif; /* Beautiful serif font */
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+  position: relative;
+  padding-left: 16px;
+  border-left: 5px solid black; /* Black border */
+}
+
+.upcoming-events-event li p::before {
+ 
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  color: black; /* Icon is black */
+}
+
+.upcoming-events-event li p:hover {
+  color: black; /* Keeps color black on hover */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 10px black, 0 0 20px black; /* Glowing effect with black */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

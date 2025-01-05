@@ -1,0 +1,50 @@
+/* Navigator container */
+.catalog-search-page-navigator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+  }
+  
+  /* Navigation buttons (Prev/Next) */
+  .catalog-search-page-navigator-navigate {
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  .catalog-search-page-navigator-navigate:hover {
+    text-decoration: underline;
+  }
+  
+  /* Active page number */
+  .number-active {
+    background-color: rgba(54, 38, 167, 0.3);
+    border-radius: 3px;
+  }
+  
+  /* Numbers container */
+  .catalog-search-page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+  }
+  
+  /* Individual page numbers */
+  .catalog-search-page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  .catalog-search-page-number:hover {
+    background-color: rgba(54, 38, 167, 0.3);
+    border-radius: 3px;
+  }
+  

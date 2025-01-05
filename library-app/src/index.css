@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+
+/* Root Variables */
+:root {
+  --background-primary: #FFFFFF;
+  --background-secondary: #F9F9F9;
+  --text: #000000;
+  --text-secondary: #555555;
+  --primary: #1A237E; /* Bold deep blue */
+  --secondary: #D32F2F; /* Bold red */
+  --highlight: #F57F17; /* Bold yellow-orange */
+  --accent: #388E3C; /* Bold green */
+  --box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px 0px;
+  --black: #272a31;
+  --orange: #ec5242;
+  --gray: #d2d3d3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #121212;
+    --background-secondary: #1E1E1E;
+    --text: #E0E0E0;
+    --text-secondary: #B0B0B0;
+    --primary: #90CAF9;
+    --secondary: #EF9A9A;
+    --highlight: #FFD54F;
+    --accent: #A5D6A7;
+    --box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 15px 0px;
+  }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif; /* Default font family */
+  background-color: var(--background-primary);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+/* Reset global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  /* color: var(--primary);  */
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* color: var(--secondary); */
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--highlight); 
+  margin-bottom: 12px;
+}
+
+h4, h5, h6 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent); 
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary); /* Gray for paragraph text */
+  margin-bottom: 8px;
+}
+
+/* Page container styling */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-secondary);
+  padding: 20px;
+}
+
+.page-container {
+  width: 95%;
+  max-width: 1400px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--background-primary);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Book container styling */
+.book-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--background-secondary);
+}
+
+.book-item {
+  width: calc(25% - 16px);
+  background-color: var(--primary); /* Deep blue background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+  background-color: var(--secondary); /* Red when hovering */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 6px 20px;
+}
+
+/* Button styling */
+.button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--highlight); /* Bold yellow-orange for buttons */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--accent); /* Green when hovered */
+  transform: translateY(-3px);
+}
+
+/* Input and Form styling */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray); /* Light gray border for inputs */
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary); /* Deep blue focus border */
+  outline: none;
+  box-shadow: 0 0 5px var(--primary); /* Blue glow on focus */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-item {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .book-item {
+    width: 100%;
+  }
+}

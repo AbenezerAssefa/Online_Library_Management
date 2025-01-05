@@ -1,0 +1,108 @@
+/* Footer Styles */
+.footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(90deg, #6e7a8a, #3e4b59);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(1, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  transition: color 0.3s ease, font-weight 0.3s ease, transform 0.3s ease;
+  padding: 5px 10px;
+}
+
+.footer-text:hover {
+  color: yellow;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Footer Social Cluster */
+.footer-social-cluster {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Footer Social Text */
+.footer-social-text {
+  font-size: 1.8rem;
+  margin-right: 20px;
+  color: white;
+}
+
+/* Footer Social Icons */
+.footer-social {
+  cursor: pointer;
+  margin-right: 12px;
+  margin-left: 12px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 2rem;
+}
+
+.footer-social:hover {
+  color: yellow;
+  transform: scale(1.2);
+}
+
+/* Optional: Hover effect for the whole footer */
+.footer:hover {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Stack items vertically on smaller screens */
+  .footer {
+    flex-direction: column;
+    height: auto; /* Remove fixed height */
+    padding: 20px 10px; /* Adjust padding */
+    justify-content: center;
+  }
+
+  .footer-text {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .footer-social-cluster {
+    flex-direction: column; /* Stack social icons vertically */
+    align-items: center;
+  }
+
+  .footer-social-text {
+    font-size: 1.5rem; /* Slightly smaller social text */
+  }
+
+  .footer-social {
+    font-size: 1.5rem; /* Adjust social icon size */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for smaller screens */
+  .footer-text {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+
+  .footer-social-text {
+    font-size: 1.3rem; /* Further reduce social text size */
+  }
+
+  .footer-social {
+    font-size: 1.3rem; /* Further reduce icon size */
+  }
+}

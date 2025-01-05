@@ -1,0 +1,33 @@
+.catalog-overview-section {
+    width: 100%;
+    height: 500px;
+    /* background-color: var(--background-secondary); 
+    box-shadow: var(--box-shadow); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 12px;
+    overflow: hidden; */
+  }
+  
+  .catalog-overview-section-top {
+    display: flex;
+    height: 10%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .catalog-overview-section-more {
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    color: var(--text-primary); /* Optional: Set text color */
+  }
+  
+  .catalog-overview-section-more:hover {
+    text-decoration: underline;
+    color: var(--secondary); /* Optional: Change color on hover */
+  }
+  

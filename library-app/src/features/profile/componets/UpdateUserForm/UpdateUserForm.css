@@ -1,0 +1,116 @@
+/* General form styling */
+.update-user-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9; /* Soft background color for the entire form */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out; /* Fade-in effect when the form appears */
+  }
+  
+  /* Input Group Styling */
+  .update-user-input-group {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Adding transition for input group hover */
+  }
+  
+  .update-user-input-group:hover {
+    transform: translateY(-5px); /* Slightly lifts the input group on hover */
+  }
+  
+  .update-user-input {
+    height: 2rem;
+    width: 100%;
+    font-size: 1.25rem; /* Reduced font size */
+    font-weight: 400;
+    padding: 0.5rem;
+    background-color: #fff; /* White background for inputs */
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Smooth transition for focus and hover effects */
+  }
+  
+  /* Focus and hover effects for the input fields */
+  .update-user-input:focus {
+    outline: none;
+    border-color: var(--primary); /* Adding primary color on focus */
+    box-shadow: 0px 0px 10px rgba(0, 120, 255, 0.3); /* Light blue glow effect */
+    background-color: #e7f3ff; /* Light background color on focus */
+  }
+  
+  /* Disabled input styling */
+  .update-user-input:disabled {
+    color: var(--text-primary);
+    background-color: var(--background-secondary);
+    border-color: var(--text-primary);
+  }
+  
+  /* Profile Button Styling */
+  .profile-button {
+    width: 80%;
+    height: 2.5rem;
+    font-size: 1.125rem; /* Reduced font size */
+    border-radius: 12px;
+    border: 2px solid var(--secondary);
+    background-color: var(--secondary);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adding smooth transition for hover and click */
+  }
+  
+  .profile-button:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.05); /* Button grows slightly on hover */
+  }
+  
+  /* Hover effect for the profile button when disabled */
+  .profile-button:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Icon Styling */
+  .create-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%); /* Centers the icon vertically */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Color change on hover */
+  }
+  
+  .create-icon:hover {
+    color: var(--primary); /* Icon changes color on hover */
+  }
+  
+  /* Adding animation for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Color Variables (Optional for easy customization) */
+  :root {
+    --primary: #0078ff; /* Blue color for primary interactions */
+    --secondary: #5c6bc0; /* Muted purple for secondary actions */
+    --background-secondary: #f4f4f9; /* Background color for input fields */
+    --text-primary: #333; /* Dark text for better readability */
+  }
+  

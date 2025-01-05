@@ -1,0 +1,91 @@
+.contact-us {
+  width: 100%;
+  max-width: 800px; /* Optimized for medium-sized screens */
+  padding: 40px;
+  background-color: #f8f9fa; /* Subtle light gray for a soft look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 16px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 3rem; /* Increased size for "Contact Us" */
+  font-weight: bold;
+  color: #343a40; /* Dark gray for better readability */
+  margin-bottom: 30px;
+  text-transform: uppercase; /* Adds emphasis to the title */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+
+.contact-us h3 {
+  font-size: 1.75rem; /* Reduced font size for the header */
+  margin-bottom: 12px; /* Optional, to create space below the header */
+  color: black; /* Black text color */
+  margin: 8px 0;
+  font-family: 'Lora', serif; /* Beautiful serif font */
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
+  position: relative;
+ 
+}
+
+
+.contact-us h3:hover {
+  color: black; /* Keeps color black on hover */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 10px black, 0 0 20px black; /* Glowing effect with black */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.contact-us h4 {
+  font-size: 1.25rem; /* Reduced font size for subheadings */
+  font-weight: 600;
+  color: #495057; /* Slightly lighter gray for contrast */
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif; /* Clean and professional */
+}
+
+.contact-us p {
+  font-size: 1rem; /* Reduced font size for paragraph text */
+  color: #6c757d; /* Medium gray for supporting text */
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-family: 'Open Sans', sans-serif; /* Readable body text font */
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.contact-us-divider {
+  width: 50%;
+  height: 1px;
+  background-color: #dee2e6; /* Light gray for subtle separation */
+  margin: 24px auto;
+  border-radius: 1px;
+  animation: expandDivider 0.6s ease-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandDivider {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 50%;
+  }
+}

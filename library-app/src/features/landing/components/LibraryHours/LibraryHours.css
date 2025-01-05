@@ -1,0 +1,59 @@
+.library-hours {
+    padding: 16px;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--background-secondary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    margin: 0 auto;
+  }
+  
+  .library-hours h3 {
+    font-size: 1.75rem; /* Reduced font size for the header */
+    margin-bottom: 12px; /* Optional, to create space below the header */
+    color: black; /* Black text color */
+    margin: 8px 0;
+    font-family: 'Lora', serif; /* Beautiful serif font */
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: justify;
+    position: relative;
+   
+  }
+  
+  
+  .library-hours h3:hover {
+    color: black; /* Keeps color black on hover */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 10px black, 0 0 20px black; /* Glowing effect with black */
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .library-hours-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #hours tr {
+    border: 1px solid #7A7978;
+    padding: 8px;
+  }
+  
+  #hours tr:nth-child(even) {
+    background-color: #EBE9F6;
+  }
+  
+  #hours tr:nth-child(odd) {
+    background-color: #E7F7F1;
+  }
+  
+  #hours td {
+    font-size: 0.875rem; /* Reduced font size for table cells */
+    padding: 8px; /* Optional, to adjust spacing in the table */
+  }
+  

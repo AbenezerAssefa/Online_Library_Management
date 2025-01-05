@@ -1,0 +1,84 @@
+.book-info {
+  width: 100%;
+  height: fit-content;
+  border-radius: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.book-info:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.book-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.book-info-cover {
+  width: 320px;
+  height: 450px;
+  margin-right: 24px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-info-cover:hover {
+  transform: scale(1.05);
+}
+
+.book-info h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.book-info h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.book-info p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.book-info h2:hover {
+  color: var(--highlight-color);
+}
+
+@media screen and (max-width: 768px) {
+  .book-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .book-info-cover {
+    width: 280px;
+    height: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .book-info h2 {
+    font-size: 22px;
+  }
+  
+  .book-info h3 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,39 @@
+.social-media-container {
+    margin: 40px auto; /* Automatically margin for horizontal centering */
+    padding: 20px; /* Add padding around the container */
+    background-color: #f9f9f9; /* Solid white background color */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 90%; /* Ensure it's not too wide */
+    max-width: 600px; /* Set a max width */
+  }
+  
+  .social-media-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000; /* Black color for the heading */
+  }
+  
+  .social-media-icons {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    align-items: center; /* Center icons horizontally */
+    gap: 95px; /* Add space between each icon */
+  }
+  
+  .social-media-icons a {
+    color: #000; /* Make icons black */
+    font-size: 2rem; /* Adjust icon size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add hover animation */
+  }
+  
+  .social-media-icons a:hover {
+    color: #555; /* Slightly lighter black on hover */
+    transform: scale(1.2); /* Enlarge the icon on hover */
+  }
+  
+  .icon {
+    margin: 5px 0; /* Add slight margin for better spacing */
+  }
+  

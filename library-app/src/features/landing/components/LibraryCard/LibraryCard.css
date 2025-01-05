@@ -1,0 +1,46 @@
+.get-library-card {
+    width: 98%;
+    height: fit-content;
+    border-radius: 16px; /* Slightly more rounded corners */
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    background: linear-gradient(135deg, var(--background-secondary), var(--background-tertiary)); /* Gradient background */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .get-library-card:hover {
+    transform: translateY(-8px); /* Lift the card on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow when hovered */
+  }
+  
+  .get-library-card-img {
+    width: 60%; /* Slightly larger image */
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners for the image */
+    object-fit: cover; /* Make the image cover the container */
+    transition: transform 0.3s ease; /* Smooth transition for image hover */
+  }
+  
+  .get-library-card-img:hover {
+    transform: scale(1.05); /* Image slightly zooms in when hovered */
+  }
+  
+  .get-library-card-link {
+    font-size: 1.2rem;
+    color: var(--text-primary); /* Neutral text color */
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  .get-library-card-link:hover {
+    color: var(--primary); /* Color change on hover */
+    cursor: pointer;
+    text-decoration: underline;
+    letter-spacing: 0.5px; /* Slight letter-spacing on hover */
+  }
+  

@@ -1,0 +1,43 @@
+.register-library-card-container {
+    width: 100%;
+    max-width: 600px; /* Limit the maximum width for better responsiveness */
+    height: auto; /* Adjust height automatically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto; /* Center the container */
+    background: linear-gradient(135deg, var(--background-secondary), var(--background-primary));
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-library-card-text {
+    margin-bottom: 16px; /* Add more spacing */
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary); /* Use a variable for text color */
+  }
+  
+  .register-library-modal-button {
+    width: 60%; /* Adjust button width for better proportions */
+    height: 3rem;
+    font-size: 1.4rem; /* Slightly smaller font size */
+    font-weight: bold;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    color: var(--text-secondary);
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  .register-library-modal-button:hover {
+    color: var(--text-primary);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a more prominent shadow */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    background: var(--primary-dark); /* Change background on hover */
+  }
+  

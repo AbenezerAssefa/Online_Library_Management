@@ -1,0 +1,8 @@
+.profile-record {
+    width: 100%;
+    height: fit-content;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Corrected rgba value */
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  

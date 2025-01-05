@@ -1,0 +1,23 @@
+/* book-history styling */
+.book-history {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    background-color: var(--background-secondary); /* Ensure you have this var defined */
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow); /* Ensure you have this var defined */
+  }
+  
+  /* book-history-box styling */
+  .book-history-box {
+    width: 100%;
+    max-height: 200px;  /* Added max-height to ensure scrolling works */
+    overflow-y: scroll;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between items */
+  }
+  
