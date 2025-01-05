@@ -41,4 +41,4 @@ app.use((0, cors_1.default)());
             console.log("Could not make a connection to the database", error);
         }
     });
-})();
+})(); //

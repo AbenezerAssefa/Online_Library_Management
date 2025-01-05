@@ -31,4 +31,4 @@ app.use(cors());
     } catch (error) {
         console.log("Could not make a connection to the database", error);
     }
-})();
+})();//
