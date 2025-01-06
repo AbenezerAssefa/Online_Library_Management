@@ -42,9 +42,9 @@ function findBookById(id) {
 function modifyBook(book) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const updatedBook = yield BookDao_1.default.findOneAndUpdate({ barcode: book.barcode }, book, { new: true });
-            if (updatedBook)
-                return updatedBook; // Use updatedBook instead of book
+            let id = yield BookDao_1.default.findOneAndUpdate({ barcode: book.barcode }, book, { new: true });
+            if (id)
+                return book;
             throw new LibraryErrors_1.BookDoesNotExistError("The book you are trying to modify does not exist");
         }
         catch (error) {
@@ -61,8 +61,8 @@ function registerBook(book) {
 function removeBook(barcode) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const deletedBook = yield BookDao_1.default.findOneAndDelete({ barcode });
-            if (deletedBook)
+            let id = yield BookDao_1.default.findOneAndDelete({ barcode });
+            if (id)
                 return "Successfully deleted book";
             throw new LibraryErrors_1.BookDoesNotExistError("The book you are trying to delete does not exist");
         }
@@ -98,7 +98,7 @@ function queryBooks(page, limit, title, barcode, description, author, subject, g
                 }
             }
             if (subject) {
-                if (book.subjects.some((s) => s.toLowerCase().includes(subject.toLowerCase())) && !filteredBooks.some((b) => b['barcode'] === book.barcode)) {
+                if (book.subjects.some((a) => a.toLowerCase().includes(subject.toLowerCase())) && !filteredBooks.some((b) => b['barcode'] === book.barcode)) {
                     filteredBooks.push(book);
                 }
             }

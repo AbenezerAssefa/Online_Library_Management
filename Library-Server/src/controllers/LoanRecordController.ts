@@ -6,7 +6,7 @@ async function createRecord(req: Request, res: Response) {
   let record = req.body;
   try {
     let createdRecord = await generateRecord(record);
-    res.status(201).json({message: "New record generated",record: createdRecord});
+    res.status(201).json({message: "New record generated", record: createdRecord});
   } catch (error) {
     res.status(500).json({message: "Something went wrong", error});
   }

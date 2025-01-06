@@ -14,7 +14,7 @@ function App() {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
+    let userId = localStorage.getItem("userId");
 
     // Dispatch fetchUser only if there is a userId in localStorage and loggedInUser is not set
     if (userId && !loggedInUser) {

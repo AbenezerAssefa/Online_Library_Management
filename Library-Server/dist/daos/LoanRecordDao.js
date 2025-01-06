@@ -45,5 +45,7 @@ exports.LoanRecordSchema = new mongoose_1.Schema({
     employeeOut: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     employeeIn: { type: mongoose_1.Schema.Types.ObjectId, required: false },
     item: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "Book" },
-}, { timestamps: true });
+}, {
+    timestamps: true
+});
 exports.default = mongoose_1.default.model('LoanRecord', exports.LoanRecordSchema);

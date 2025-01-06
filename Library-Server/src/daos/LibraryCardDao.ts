@@ -8,3 +8,4 @@ const LibraryCardSchema: Schema = new Schema({
 });
 
 export default mongoose.model<ILibraryCardModel>('LibraryCard', LibraryCardSchema);
+  

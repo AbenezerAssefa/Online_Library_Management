@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../redux/ReduxStore'; // Correct path for Redux store
 import './RegisterLibraryCardForm.css'; // Correct path for the CSS file
@@ -11,24 +11,25 @@ export const RegisterLibraryCardForm: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
 
   // Dispatching action to get the library card
-  React.useEffect(() => {
+  useEffect(() => {
     if (userState.loggedInUser) {
       dispatch(getLibraryCard(userState.loggedInUser?._id));
     }
   }, [dispatch, userState.loggedInUser]);
 
-  // Handle login button click to display login modal
-  const handleLoginClick = () => {
-    dispatch(setDisplayLibraryCard(false));
-    dispatch(setDisplayLogin(true)); // Open login modal
-  };
+
 
   // Handle library card creation button click
   const handleCreateLibraryCard = () => {
     if (userState.loggedInUser) {
-      dispatch(getLibraryCard(userState.loggedInUser._id)); // Dispatch action to get library card
+      dispatch(getLibraryCard(userState.loggedInUser?._id)); // Dispatch action to get library card
     }
   };
+    // Handle login button click to display login modal
+    const handleLoginClick = () => {
+      dispatch(setDisplayLibraryCard(false));
+      dispatch(setDisplayLogin(true)); // Open login modal
+    };
 
   return (
     <>
@@ -49,7 +50,7 @@ export const RegisterLibraryCardForm: React.FC = () => {
           }
         </div>
       : 
-        <div className="register-library-card-container">
+        <div className="register-library-card-container">  
           <h3 className="register-library-card-text">
             You must be a member of the library to obtain a library card.
           </h3>

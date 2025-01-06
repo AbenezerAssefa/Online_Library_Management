@@ -10,4 +10,5 @@ router.get('/:cardId',ValidateSchema(Schemas.libraryCard.get, "params"), Library
 // Route to create a new library card
 router.post('/',ValidateSchema(Schemas.libraryCard.create, "body"), LibraryCardController.createLibraryCard);
 
-export default router;
+export = router;
+    

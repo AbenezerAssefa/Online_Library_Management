@@ -23,9 +23,9 @@ function registerLibraryCard(card) {
             return yield savedCard.save();
         }
         catch (error) {
-            let existingCard = yield LibraryCardDao_1.default.findOne({ user: card.user }).populate('user');
-            if (existingCard)
-                return existingCard;
+            let c = yield LibraryCardDao_1.default.findOne({ user: card.user }).populate('user');
+            if (c)
+                return c;
             throw error;
         }
     });

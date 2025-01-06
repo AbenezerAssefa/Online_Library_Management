@@ -15,7 +15,9 @@ export const LoanRecordSchema: Schema = new Schema(
     employeeIn: { type: Schema.Types.ObjectId, required: false},
     item: { type: Schema.Types.ObjectId, required: true, ref:"Book"}, 
   },
-  { timestamps: true } 
+  { 
+    timestamps: true
+   } 
 );
 
 

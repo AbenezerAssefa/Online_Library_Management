@@ -22,10 +22,10 @@ const initialState: BookSliceState = {
 // Async thunk for fetching all books
 export const fetchAllBooks = createAsyncThunk(
   'book/all',
-  async (_, thunkAPI) => {
+  async (payload, thunkAPI) => {
     try {
-      const req = await axios.get('http://localhost:8000/book/');
-      return req.data.books;
+      let req = await axios.get('http://localhost:8000/book/');
+      return req.data.books; 
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }
@@ -123,56 +123,89 @@ export const BookSlice = createSlice({
   initialState,
   reducers: {
     setCurrentBook(state, action: PayloadAction<Book | undefined>) {
-      state.currentBook = action.payload;
+      state = {
+        ...state,
+        currentBook: action.payload
+      }
+      return state;
     },
   },
 
   extraReducers: (builder) => {
     // Handle fetchAllBooks pending state
-    builder.addCase(fetchAllBooks.pending, (state) => {
-      state.loading = true;
-      state.books = [];
-    });
+    builder.addCase(fetchAllBooks.pending, (state, action) => {
+      state = {
+        ...state,
+       books: [],
+       loading: true
+      }
+      return state;
+  })
 
     // Handle queryBooks pending state
-    builder.addCase(queryBooks.pending, (state) => {
-      state.loading = true;
-      state.books = [];
-    });
+    builder.addCase(queryBooks.pending, (state, action) => {
+      state = {
+        ...state,
+       books: [],
+       loading: true
+      }
+      return state;
+  })
 
     // Handle checkoutBook pending state
-    builder.addCase(checkoutBook.pending, (state) => {
-      state.loading = true;
-    });
+    builder.addCase(checkoutBook.pending, (state, action) => {
+      state = {
+        ...state,
+       loading: true
+      }
+      return state;
+  })
 
     // Handle checkinBook pending state
     builder.addCase(checkinBook.pending, (state) => {
-      state.loading = true;
-    });
+      state = {
+        ...state,
+       loading: true
+      }
+      return state;
+  })
 
-    builder.addCase(loadBookByBarcode.pending, (state) => {
-      state.loading = true;
-    });
+    builder.addCase(loadBookByBarcode.pending, (state, action) => {
+      state = {
+        ...state,
+      
+       loading: true
+      }
+      return state;
+  })
 
     // Handle fetchAllBooks fulfilled state
     builder.addCase(fetchAllBooks.fulfilled, (state, action) => {
-      state.books = action.payload;
-      state.loading = false;
-      state.error = false;
-    });
+      state = {
+        ...state,
+       books:action.payload,
+       loading: false
+      }
+      return state;
+  })
 
     // Handle queryBooks fulfilled state
     builder.addCase(queryBooks.fulfilled, (state, action) => {
-      state.books = action.payload.items;
-      state.pagingInformation = {
+      state = {
+        ...state,
+        books: action.payload.items,
+      pagingInformation : {
         totalCount: action.payload.totalCount,
         currentPage: action.payload.currentPage,
         totalPages: action.payload.totalPages,
         limit: action.payload.limit,
         pageCount: action.payload.pageCount,
-      };
-      state.loading = false;
-    });
+      },
+      loading:false
+    }
+    return state;
+
+  })
 
     // Handle checkoutBook fulfilled state
     builder.addCase(checkoutBook.fulfilled, (state, action) => {
@@ -186,9 +219,15 @@ export const BookSlice = createSlice({
         return book;
       });
 
-      state.books = bookList;
-      state.loading = false;
-    });
+      state = {
+        ...state,
+   
+       loading: false,
+       books: bookList
+      }
+      return state;
+  })
+  
 
     // Handle checkinBook fulfilled state
     builder.addCase(checkinBook.fulfilled, (state, action) => {
@@ -202,31 +241,37 @@ export const BookSlice = createSlice({
         return book;
       });
 
-      state.books = bookList;
-      state.loading = false;
-    });
+      state = {
+        ...state,
+    
+       loading: false,
+       books: bookList
+      }
+      return state;
+  })
 
-    // Handle any rejection state
-    builder.addCase(fetchAllBooks.rejected, (state) => {
-      state.loading = false;
-      state.error = true;
-    });
-    builder.addCase(queryBooks.rejected, (state) => {
-      state.loading = false;
-      state.error = true;
-    });
+  builder.addCase(loadBookByBarcode.fulfilled, (state, action) => {
+    state = {
+      ...state,
+  
+     loading: false,
+     currentBook: action.payload
+    }
+    return state;
+})
 
-    builder.addCase(loadBookByBarcode.fulfilled, (state, action) => {
-      state.loading = false;
-      state.currentBook = action.payload;
-    });
+builder.addCase(loadBookByBarcode.rejected, (state) => {
+  state = {
+    ...state,
 
-    builder.addCase(loadBookByBarcode.rejected, (state) => {
-      state.loading = false;
-      state.error = true;
-    });
-  },
-});
+   loading: false,
+   error: true
+  }
+  return state;
+})
+   
+  }
+})
 
 // Export actions and reducer
 export const { setCurrentBook } = BookSlice.actions;

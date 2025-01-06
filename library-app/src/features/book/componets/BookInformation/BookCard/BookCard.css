@@ -1,4 +1,5 @@
-.book-card { 
+/* Book Card Styles */
+.book-card {
   height: 400px;
   width: 300px;
   background-color: var(--background-secondary);
@@ -116,35 +117,134 @@
   background-color: #F57C00;
 }
 
-.book-actions {
+/* Admin buttons container */
+.admin-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
 
-.book-action-button {
+/* Individual admin buttons */
+.edit-button,
+.delete-button,
+.create-button {
   padding: 6px 12px;
-  font-size: 12px;
-  background-color: #007bff;
+  font-size: 14px;
+  background-color: #007bff; /* Blue for primary actions */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 32%; /* Makes the buttons evenly spaced */
 }
 
-.book-action-button:hover {
-  background-color: #405e8a;
+.edit-button:hover,
+.delete-button:hover,
+.create-button:hover {
+  background-color: #405e8a; /* Darker blue for hover */
 }
 
-.book-action-button.edit-button {
-  background-color: #405e8a;
+/* Specific styles for each button */
+.edit-button {
+  background-color: #405e8a; /* Green for edit */
 }
 
-.book-action-button.add-button {
-  background-color: #405e8a;
+.delete-button {
+  background-color: #405e8a; /* Red for delete */
 }
 
-.book-action-button.delete-button {
-  background-color: #405e8a;
+.create-button {
+  background-color: #405e8a; /* Yellow for create */
+}
+
+/* Button active states */
+.edit-button:active {
+  background-color: #388E3C; /* Darker green */
+}
+
+.delete-button:active {
+  background-color: #D32F2F; /* Darker red */
+}
+
+.create-button:active {
+  background-color: #FF9800; /* Darker yellow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-card {
+    width: 100%;
+    height: auto;
+    margin: 8px 0;
+  }
+
+  .book-card-title {
+    font-size: 1.1rem;
+  }
+
+  .book-card-author {
+    font-size: 1rem;
+  }
+
+  .book-card-description {
+    font-size: 0.7rem;
+    max-height: 50%;
+    --webkit-line-clamp: 4;
+  }
+
+  .book-card-loan-button {
+    font-size: 0.9rem;
+    height: 2rem;
+  }
+
+  .admin-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edit-button,
+  .delete-button,
+  .create-button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    width: 100%;
+    height: auto;
+    padding: 4px;
+  }
+
+  .book-card-title {
+    font-size: 1rem;
+  }
+
+  .book-card-author {
+    font-size: 0.9rem;
+  }
+
+  .book-card-description {
+    font-size: 0.6rem;
+    --webkit-line-clamp: 3;
+  }
+
+  .book-card-loan-button {
+    font-size: 0.8rem;
+    height: 1.8rem;
+  }
+
+  .admin-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edit-button,
+  .delete-button,
+  .create-button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
 }

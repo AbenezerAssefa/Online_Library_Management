@@ -19,12 +19,12 @@ export async function findBookById(id: string): Promise<IBookModel> {
 
 export async function modifyBook(book: IBookModel): Promise<IBookModel> {
   try {
-    const updatedBook = await BookDao.findOneAndUpdate(
+    let id = await BookDao.findOneAndUpdate(
       { barcode: book.barcode },
       book,
       { new: true }
     );
-    if (updatedBook) return updatedBook; // Use updatedBook instead of book
+    if (id) return book; 
     throw new BookDoesNotExistError("The book you are trying to modify does not exist");
   } catch (error: any) {
     throw error;
@@ -38,8 +38,8 @@ export async function registerBook(book: IBook): Promise<IBookModel> {
 
 export async function removeBook(barcode: string): Promise<string> {
   try {
-    const deletedBook = await BookDao.findOneAndDelete({ barcode });
-    if (deletedBook) return "Successfully deleted book";
+    let id = await BookDao.findOneAndDelete({ barcode });
+    if (id) return "Successfully deleted book";
     throw new BookDoesNotExistError("The book you are trying to delete does not exist");
   } catch (error: any) {
     throw error;
@@ -90,7 +90,7 @@ export async function queryBooks(
 
 
 if(subject){
-    if (book.subjects.some((s) => s.toLowerCase().includes(subject.toLowerCase())) && !filteredBooks.some((b) => b['barcode'] === book.barcode)) {
+    if (book.subjects.some((a) => a.toLowerCase().includes(subject.toLowerCase())) && !filteredBooks.some((b) => b['barcode'] === book.barcode)) {
       filteredBooks.push(book);
     }
   }

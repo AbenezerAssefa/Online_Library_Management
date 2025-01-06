@@ -15,7 +15,7 @@ export const CatalogSearch: React.FC = () => {
 
   useEffect(() => {
     dispatch(queryBooks(location.search));
-  }, [location.search, dispatch]);
+  }, [location.search]);
 
   return (
     <div className="catalog-search">

@@ -11,6 +11,6 @@ export interface IBook {
     publisher: string;
     pages: number;
     genre: string;
-    records:ILoanRecord[]
+    records:ILoanRecord[];
   }
   

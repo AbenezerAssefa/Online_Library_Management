@@ -93,7 +93,7 @@ async function searchForBooksByQuery(req: Request, res: Response) {
     );
 
  res.status(200).json({message: "Retrieved books from query", page: books,
-    });
+    }); 
   }
 
 // Export default object

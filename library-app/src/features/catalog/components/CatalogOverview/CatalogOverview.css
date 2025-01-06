@@ -145,36 +145,7 @@ h4 {
   }
 } */
 
-.admin-controls {
-    margin-top: 20px;
-  }
-  
-  .admin-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-  }
-  
-  .admin-buttons button {
-    padding: 8px 15px;
-    margin: 0 5px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .admin-buttons button:hover {
-    background-color: #0056b3;
-  }
-  
-  .admin-buttons button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+ 
   
   .catalog-overview h2, .catalog-overview h4 {
     text-align: center;          /* Centers the text */

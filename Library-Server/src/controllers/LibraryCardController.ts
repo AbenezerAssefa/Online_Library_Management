@@ -26,7 +26,7 @@ export async function getLibraryCard(req: Request, res: Response){
     res.status(201).json({ message: "Library card created", libraryCard });
   } catch (error) {
    
-    res.status(500).json({ message: "Unable to create library card at this time", error });
+    res.status(500).json({ message: "Unable to create library card at this time" });
   }
 }
 
