@@ -1,50 +1,168 @@
-# React + TypeScript + Vite
+<a name="readme-top"></a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- TABLE OF CONTENTS -->
 
-Currently, two official plugins are available:
+# 📗 Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[Js capstone project\] ](#-js-capstone-project-)
+  - [🛠 Built With `HTML/CSS`,`Nodejs/JavaScript`, and `Webpack`](#-built-with-htmlcssnodejsjavascript-and-webpack)
+    - [Tech Stack `HTML/CSS` with `JavaScript` \& `Webpack`](#tech-stack-htmlcss-with-javascript--webpack)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Live Preview](#live-preview)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
-## Expanding the ESLint configuration
+<!-- PROJECT DESCRIPTION -->
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# 📖 [Online Library Management project] <a name="about-project"></a>
 
-- Configure the top-level `parserOptions` property like this:
+ <h2>The Library Management System is a full-stack web application designed to streamline the management of books and library cards. It consists of a backend API built with Node.js and Express, and a frontend client application developed using React. The system enables CRUD (Create, Read, Update, Delete) operations for books and library cards, with MongoDB as the database for storing collections.</h2>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+
+## Built With
+
+- Major languages: HTML, CSS, TypeScript.
+- Frameworks: Bootstrap, React, Redux
+- Technologies used: webpack.
+- Database used: MandoDB, Mongoose
+- BackEnd used: Node.js , Express,js
+
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+- **Comprehensive Book Management: Full CRUD operations for books, including text-based search on title, description, and authors using MongoDB indexing.**
+- **Library Card Integration: Efficient management of user library cards and their linkage with book loan records via shared fields.**
+- **Intuitive Frontend: React-based client with a responsive design, featuring seamless navigation, search, and detailed views for managing books and library cards.**
+- **Robust Backend API: RESTful API built with Node.js and Express, ensuring secure and scalable interactions with a MongoDB database.**
+- **Scalable and Extensible Design: Modular architecture ready for features like authentication, analytics, and advanced loan management.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+Check Git is already installed and working:
+
+```sh
+ git --version
+ node --version
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+It should not show you any error. And should return the version info.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Setup
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Clone this repository to your desired folder:
+
+Execute this:
+
+```sh
+  git clone https://github.com/AbenezerAssefa/Online_Library_Management.git
 ```
+
+### Install
+
+Install this project with:
+
+Install Dependencies:
+
+```sh
+  cd LMS
+  npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+Execute this:
+
+```sh
+  npm start
+```
+
+
+## 🚀 Screenshot <a name="screenshot"></a>
+
+![image](./src/assests/Screenshot%202023-04-27%20124908.png)
+![image](./src/assests/Screenshot%202023-04-27%20124908.png)
+![image](./src/assests/Screenshot%202023-04-27%20124908.png)
+
+
+
+- [Live Demo]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Author <a name="authors"></a>
+
+
+👤 **Abenezer Assefa**
+
+- GitHub: [@AbenezerAssefa](https://github.com/AbenezerAssefa)
+- LinkedIn: [Abenezer](https://www.linkedin.com/in/abenezer-assefa-386b25193)
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Dynamic Renders]**
+- [ ] **[Form functionalities]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING --->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project... please give it a start.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [CC License](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
