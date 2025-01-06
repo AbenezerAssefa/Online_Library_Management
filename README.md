@@ -6,8 +6,8 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[Js capstone project\] ](#-js-capstone-project-)
-  - [🛠 Built With `HTML/CSS`,`Nodejs/JavaScript`, and `Webpack`](#-built-with-htmlcssnodejsjavascript-and-webpack)
-    - [Tech Stack `HTML/CSS` with `JavaScript` \& `Webpack`](#tech-stack-htmlcss-with-javascript--webpack)
+  - [🛠 Built With ](#-built-with-htmlcssnodejsjavascript-and-webpack)
+    - [Tech Stack](#tech-stack-htmlcss-with-javascript--webpack)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -29,7 +29,7 @@
 
 # 📖 [Online Library Management project] <a name="about-project"></a>
 
- <h2>The Library Management System is a full-stack web application designed to streamline the management of books and library cards. It consists of a backend API built with Node.js and Express, and a frontend client application developed using React. The system enables CRUD (Create, Read, Update, Delete) operations for books and library cards, with MongoDB as the database for storing collections.</h2>
+ <h4>The Library Management System is a full-stack web application designed to streamline the management of books and library cards. It consists of a backend API built with Node.js and Express, and a frontend client application developed using React. The system enables CRUD (Create, Read, Update, Delete) operations for books and library cards, with MongoDB as the database for storing collections.</h4>
 
 
 
@@ -107,13 +107,11 @@ Execute this:
 
 ## 🚀 Screenshot <a name="screenshot"></a>
 
-![image](./src/assests/Screenshot%202023-04-27%20124908.png)
-![image](./src/assests/Screenshot%202023-04-27%20124908.png)
-![image](./src/assests/Screenshot%202023-04-27%20124908.png)
+![image](https://github.com/user-attachments/assets/beaf915c-5128-4407-bb55-41815d386bec)
 
+![image](https://github.com/user-attachments/assets/880d0579-ddcf-46ac-bc18-2569536f352e)
 
-
-- [Live Demo]()
+![image](https://github.com/user-attachments/assets/c84ad2ff-6f07-41b2-b274-48c022d0c04c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,8 +122,8 @@ Execute this:
 
 👤 **Abenezer Assefa**
 
-- GitHub: [@AbenezerAssefa](https://github.com/AbenezerAssefa)
-- LinkedIn: [Abenezer](https://www.linkedin.com/in/abenezer-assefa-386b25193)
+- GitHub: [@Abenezer Assefa](https://github.com/AbenezerAssefa)
+- LinkedIn: [@Abenezer Assefa](https://www.linkedin.com/in/abenezer-assefa-gudeta-386b25193/)
 
 
 
@@ -135,8 +133,10 @@ Execute this:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Dynamic Renders]**
-- [ ] **[Form functionalities]**
+- [ ] **Improve security**
+- [ ] **Delploy the app**
+- [ ] **Add testes**
+- [ ] **Write documentation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,6 +163,6 @@ If you like this project... please give it a start.
 
 ## 📝 License <a name="license"></a>
 
-This project is [CC License](./LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
