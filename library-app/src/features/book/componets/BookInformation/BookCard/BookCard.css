@@ -18,8 +18,8 @@
 .book-card-cover {
   height: 45%;
   width: 100%;
-  object-fit: cover; /* Ensure the image scales appropriately */
-  border-radius: 8px; /* Optional: adds rounded corners to the image */
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .book-card-info {
@@ -34,18 +34,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center; /* Center title text */
+  /* font-weight: bold;
+  text-align: center;  */
 }
 
 .book-card-author {
   width: 100%;
   font-size: 1.2rem;
-  text-align: center;
+  /* text-align: center; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 4px 0; /* Adjust spacing around author name */
+  /* margin: 4px 0;  */
 }
 
 .book-card-description {
@@ -54,9 +54,9 @@
   font-size: 0.75rem;
   text-align: center;
   margin-top: 8px;
-  color: var(--text-secondary); /* Adjust color */
+  color: var(--text-secondary); 
   display: -webkit-box;
-  --webkit-line-clamp: 6; /* Limits to 6 lines */
+  --webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 8px;
@@ -70,7 +70,7 @@
   cursor: pointer;
   font-size: 1rem;
   margin-top: 8px;
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover states */
+  transition: all 0.3s ease-in-out; 
 }
 
 .available {
@@ -91,11 +91,11 @@
 
 /* Button hover states */
 .available:hover {
-  background-color: #4CAF50; /* Green when hovering on available */
+  background-color: #4CAF50; 
 }
 
 .unavailable:hover {
-  background-color: #FF5722; /* Darker red for unavailable */
+  background-color: #FF5722; 
 }
 
 .checkout:hover {

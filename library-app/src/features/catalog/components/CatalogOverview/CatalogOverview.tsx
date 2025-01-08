@@ -8,81 +8,41 @@ import { CatalogOverviewSection } from '../CatalogeOverviewSection/CatalogeOverv
 
 export const CatalogOverview: React.FC = () => {
   const bookState = useSelector((state: RootState) => state.book);
-  const userState = useSelector((state: RootState) => state.user); // Access user state here
   const dispatch: AppDispatch = useDispatch();
 
-  const [genres, setGenres] = useState<string[]>(() => generateRandomGenres());
-  const [currentBookIndex, setCurrentBookIndex] = useState<number>(0); // Initial index set to 0
+  const [genres, setGenres] = useState<string[]>(generateRandomGenres());
 
   useEffect(() => {
     dispatch(fetchAllBooks());
   }, [dispatch]);
 
-  // Check loading state
+  console.log('Books loaded:', bookState.books);
+  console.log('Genres:', genres);
+
   if (bookState.loading) {
-    return <div>Loading...</div>;
+    return <div className="catalog-loading">Loading books...</div>;
   }
 
-  // Check if there are books to display
-  if (bookState.books.length === 0) {
-    return <div>No books available at the moment.</div>;
+  if (!bookState.books.length) {
+    return <div className="catalog-empty">No books available at the moment.</div>;
   }
-
-  // Function to show the next set of 4 books
-  const showBooks = (books: any[]) => books.slice(currentBookIndex, currentBookIndex + 4);
-
-
-
-  // Handlers for Edit and Delete buttons (to be implemented)
-  const handleEdit = (bookId: string) => {
-    console.log('Edit book with id:', bookId);
-    // Implement edit functionality
-  };
-
-  const handleDelete = (bookId: string) => {
-    console.log('Delete book with id:', bookId);
-    // Implement delete functionality
-  };
 
   return (
     <div className="catalog-overview">
-      <h2>
-        Welcome to our library! We currently have {bookState.books.length} books.
-      </h2>
-      <h4>
-        Browse our selected books below, or search for something using the top navigation bar.
-      </h4>
-
-      {/* Display books by genres */}
+      <h2>Welcome to our library! We currently have {bookState.books.length} books.</h2>
+      <h4>Browse our selected books below, or search for something using the top navigation bar.</h4>
       {genres.map((genre) => {
         const booksByGenre = getRandomBooksByGenre(genre, bookState.books);
-
+        console.log(`Books for genre ${genre}:`, booksByGenre);
         return (
-          <div key={genre}>
+          <div key={genre} className="catalog-genre-section">
             <CatalogOverviewSection
-              books={showBooks(booksByGenre)} // Show 4 books based on current index
+              books={booksByGenre}
               label={genre}
             />
           </div>
         );
       })}
-
-      {/* Render "Edit" and "Delete" buttons for admin */}
-      {userState.role === 'admin' && (
-        <div className="admin-controls">
-          <h3>Admin Controls</h3>
-          {/* Loop through the displayed books and show Edit/Delete buttons */}
-          {showBooks(bookState.books).map((book) => (
-            <div key={book.id} className="admin-buttons">
-              <button onClick={() => handleEdit(book.id)}>Edit</button>
-              <button onClick={() => handleDelete(book.id)}>Delete</button>
-            </div>
-          ))}
-        </div>
-      )}
-
-   
-
     </div>
   );
 };

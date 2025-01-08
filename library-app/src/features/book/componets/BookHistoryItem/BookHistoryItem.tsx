@@ -25,8 +25,7 @@ export const BookHistoryItem: React.FC<BookHistoryItemProps> = ({ record }) => {
       <div className="book-history-item-group">
         <p 
           style={{ cursor: 'pointer' }} 
-          onClick={visitProfile}
-        >
+          onClick={visitProfile}>
           Patron: {record.patron}
         </p>
         <p>Loan Date: {new Date(record.loanedDate).toDateString()}</p>

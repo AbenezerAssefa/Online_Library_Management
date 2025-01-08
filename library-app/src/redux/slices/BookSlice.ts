@@ -79,8 +79,10 @@ export const checkinBook = createAsyncThunk(
   'book/checkin',
   async (payload: CheckinBookPayload, thunkAPI) => {
     try {
-      let record = payload.book.records[0];
-      let updateRecord = {
+      const record = payload.book.records?.[0];
+      if (!record) throw new Error("No loan record found for the book.");
+
+      const updateRecord = {
         status: 'AVAILABLE',
         loanedDate: record.loanedDate,
         dueDate: record.dueDate,
@@ -92,10 +94,13 @@ export const checkinBook = createAsyncThunk(
         _id: record._id,
       };
 
-      let loan = await axios.put('http://localhost:8000/loan/', updateRecord);
+      const loan = await axios.put('http://localhost:8000/loan/', updateRecord);
       return loan.data.record;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e);
+      if (e instanceof Error) {
+        return thunkAPI.rejectWithValue(e.message);
+      }
+      return thunkAPI.rejectWithValue('An unknown error occurred.');
     }
   }
 );
@@ -162,7 +167,7 @@ export const BookSlice = createSlice({
   })
 
     // Handle checkinBook pending state
-    builder.addCase(checkinBook.pending, (state) => {
+    builder.addCase(checkinBook.pending, (state, action) => {
       state = {
         ...state,
        loading: true
