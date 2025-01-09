@@ -12,9 +12,12 @@ export const BookHistory: React.FC<BookHistoryProps> = ({ book }) => {
     <div className="book-history">
       <h2>Loan History</h2>
       <div className="book-history-box">
-        {book.records.map((record) => (
+        {book.records.map((record) => {
+          return(
           <BookHistoryItem key={record._id} record={record} />
-        ))}
+        )
+      })
+    }
       </div>
     </div>
   );

@@ -19,16 +19,16 @@ exports.queryRecords = queryRecords;
 const LoanRecordDao_1 = __importDefault(require("../daos/LoanRecordDao"));
 const BookService_1 = require("./BookService");
 const LibraryErrors_1 = require("../utils/LibraryErrors");
-// Function to generate a new loan record
 function generateRecord(record) {
     return __awaiter(this, void 0, void 0, function* () {
+        var _a;
         try {
-            let createdRecord = new LoanRecordDao_1.default(record);
-            createdRecord = yield createdRecord.save();
-            let book = yield (0, BookService_1.findBookById)(record.item);
-            let records = book.records;
-            records = [createdRecord, ...records];
-            book.records = records;
+            const book = yield (0, BookService_1.findBookById)(record.item);
+            if (((_a = book.records[0]) === null || _a === void 0 ? void 0 : _a.status) === 'LOANED') {
+                throw new Error('Book is already loaned out.');
+            }
+            const createdRecord = yield new LoanRecordDao_1.default(record).save();
+            book.records = [createdRecord, ...book.records];
             yield (0, BookService_1.modifyBook)(book);
             return createdRecord;
         }

@@ -3,27 +3,24 @@ import { findBookById, modifyBook } from './BookService';
 import { ILoanRecord } from '../models/LoanRecord';
 import { LoanRecordDoesNotExist } from '../utils/LibraryErrors';
 
-// Function to generate a new loan record
 export async function generateRecord(record: ILoanRecord): Promise<ILoanRecordModel> {
   try {
-    let createdRecord = new LoanRecordDao(record);
-    createdRecord = await createdRecord.save();
+    const book = await findBookById(record.item);
 
-    let book = await findBookById(record.item);
-    let records = book.records;
+    if (book.records[0]?.status === 'LOANED') {
+      throw new Error('Book is already loaned out.');
+    }
 
-    records = [createdRecord, ...records];
-    book.records = records;
-
+    const createdRecord = await new LoanRecordDao(record).save();
+    book.records = [createdRecord, ...book.records];
     await modifyBook(book);
 
     return createdRecord;
-
   } catch (error) {
     throw error;
   }
-  
 }
+
 
 // Function to modify an existing loan record
 export async function modifyRecord(record: ILoanRecordModel): Promise<ILoanRecordModel> {

@@ -16,21 +16,25 @@ export const BookCheckin: React.FC = () => {
 
   const checkin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
-   
+  
     if (book && user) {
+      if (!book.records || book.records.length === 0) {
+        alert("No loan record found for this book.");
+        return;
+      }
+  
       dispatch(
         checkinBook({
           book,
           employee: user,
         })
       );
-
-    
+  
       dispatch(setDisplayLoan(false));
       dispatch(setCurrentBook(undefined));
     }
   };
+  
 
   return (
     <div className="book-checkin">
